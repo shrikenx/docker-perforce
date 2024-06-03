@@ -26,7 +26,7 @@ ARG SYSTEMCTL_GITSHA1=73b5aff2ba6abfd254d236f1df22ff4971d44660
 
 RUN sed -ir '/\[updates\].*/a enabled=1' /etc/yum.repos.d/CentOS-Base.repo && \
     yum install -y epel-release cronie-anacron tar gzip curl openssl which sudo initscripts sysvinit at && \
-    echo -ne '[perforce]\nname=Perforce\nbaseurl=http://package.perforce.com/yum/rhel/7/x86_64\nenabled=1\ngpgcheck=1\n' > /etc/yum.repos.d/perforce.repo && \
+    echo -ne '[perforce]\nname=Perforce\nbaseurl=http://package.perforce.com/yum/rhel/9/x86_64\nenabled=1\ngpgcheck=1\n' > /etc/yum.repos.d/perforce.repo && \
     rpm --import https://package.perforce.com/perforce.pubkey && \
     yum clean all --enablerepo='*' && \
     rm -rf /var/cache/yum

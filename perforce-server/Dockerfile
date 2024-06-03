@@ -1,7 +1,7 @@
 FROM ambakshi/perforce-base
 MAINTAINER Amit Bakshi <ambakshi@gmail.com>
 
-ARG P4_VERSION
+ARG P4_VERSION=24.1
 
 RUN yum clean all --enablerepo='*' \
     && yum clean metadata --enablerepo='*' \
